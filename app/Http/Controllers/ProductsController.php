@@ -17,12 +17,15 @@ class ProductsController extends Controller
     }
 
     public function checkout(Request $request){
-        return $request;
+        $product = Products::query()->where('id' , $request->id)
+            ->select('id' , 'price' , 'name')->first();
+
+
         return view('checkout');
     }
 
-public function contact(){
-        return view('contact');
-}
+    public function contact(){
+            return view('contact');
+    }
 
 }

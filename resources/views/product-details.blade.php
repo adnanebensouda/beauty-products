@@ -35,18 +35,14 @@
                                 </div>
                             </div>
                             <div class="product-details-pro-qty">
-
-                                    <form action="/checkout" method="post">
-                                        @csrf
-                                        <input type="number" value="{{$product->id}}" name="id" hidden>
-                                        <div class="pro-qty">
-
+                                <form action="/checkout" method="post">
+                                    @csrf
+                                    <input type="number" value="{{$product->id}}" name="id" hidden>
+                                    <div class="pro-qty">
                                         <input type="number" name="qte" title="Quantity" value="1">
-                                        </div>
-                                        <button type="submit" class="btn" >Checkout</button>
-                                    </form>
-
-
+                                    </div>
+                                    <button type="submit" class="btn" >Checkout</button>
+                                </form>
                             </div>
 
                             <div class="product-details-action">
