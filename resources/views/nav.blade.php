@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-5 col-lg-2 col-xl-1">
                 <div class="header-logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img class="logo-main" src="assets/images/logo.webp" width="95" height="68" alt="Logo" />
                     </a>
                 </div>

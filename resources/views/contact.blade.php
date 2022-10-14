@@ -11,9 +11,7 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
 
-    <!--== Start Header Wrapper ==-->
-    @include('nav')
-    <!--== End Header Wrapper ==-->
+
 
     <!--== Start Product Details Area Wrapper ==-->
 
@@ -39,23 +37,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" name="first_name" placeholder="First Name">
+                                        <input required class="form-control" type="text" name="first_name" placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                                        <input required class="form-control" type="text" name="last_name" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" name="phone" placeholder="Phone">
+                                        <input required class="form-control" type="text" name="phone" placeholder="Phone">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="address" placeholder="Address"></textarea>
+                                        <textarea required class="form-control" name="address" placeholder="Address"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -135,130 +133,7 @@
     </aside>
     <!--== End Product Quick Add Cart Modal ==-->
 
-    <!--== Start Aside Search Form ==-->
-    <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch"
-           aria-labelledby="offcanvasTopLabel">
-        <div class="offcanvas-header">
-            <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                    class="fa fa-close"></i></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="container pt--0 pb--0">
-                <div class="search-box-form-wrap">
-                    <div class="search-note">
-                        <p>Start typing and press Enter to search</p>
-                    </div>
-                    <form action="#" method="post">
-                        <div class="aside-search-form position-relative">
-                            <label for="SearchInput" class="visually-hidden">Search</label>
-                            <input id="SearchInput" type="search" class="form-control"
-                                   placeholder="Search entire store…">
-                            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!--== End Aside Search Form ==-->
 
-    <!--== Start Product Quick View Modal ==-->
-    <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="product-quick-view-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                            <span class="fa fa-close"></span>
-                        </button>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <!--== Start Product Thumbnail Area ==-->
-                                    <div class="product-single-thumb">
-                                        <img src="assets/images/shop/quick-view1.webp" width="544" height="560"
-                                             alt="Image-HasTech">
-                                    </div>
-                                    <!--== End Product Thumbnail Area ==-->
-                                </div>
-                                <div class="col-lg-6">
-                                    <!--== Start Product Info Area ==-->
-                                    <div class="product-details-content">
-                                        <h5 class="product-details-collection">Premioum collection</h5>
-                                        <h3 class="product-details-title">Offbline Instant Age Rewind Eraser.</h3>
-                                        <div class="product-details-review mb-5">
-                                            <div class="product-review-icon">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <button type="button" class="product-review-show">150 reviews</button>
-                                        </div>
-                                        <p class="mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident
-                                            alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam
-                                            sequi amet consectetur.</p>
-                                        <div class="product-details-pro-qty">
-                                            <div class="pro-qty">
-                                                <input type="text" title="Quantity" value="01">
-                                            </div>
-                                        </div>
-                                        <div class="product-details-action">
-                                            <h4 class="price">$254.22</h4>
-                                            <div class="product-details-cart-wishlist">
-                                                <button type="button" class="btn" data-bs-toggle="modal"
-                                                        data-bs-target="#action-CartAddModal">Add to cart
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--== End Product Info Area ==-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!--== End Product Quick View Modal ==-->
-
-    <!--== Start Aside Cart ==-->
-    <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart"
-           aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
-            <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i
-                    class="fa fa-chevron-right"></i></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="aside-cart-product-list">
-                <li class="aside-product-list-item">
-                    <a href="#/" class="remove">×</a>
-                    <a href="product-details.html">
-                        <img src="assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
-                        <span class="product-title">Leather Mens Slipper</span>
-                    </a>
-                    <span class="product-price">1 × £69.99</span>
-                </li>
-                <li class="aside-product-list-item">
-                    <a href="#/" class="remove">×</a>
-                    <a href="product-details.html">
-                        <img src="assets/images/shop/cart2.webp" width="68" height="84" alt="Image">
-                        <span class="product-title">Quickiin Mens shoes</span>
-                    </a>
-                    <span class="product-price">1 × £20.00</span>
-                </li>
-            </ul>
-            <p class="cart-total"><span>Subtotal:</span><span class="amount">£89.99</span></p>
-            <a class="btn-total" href="product-cart.html">View cart</a>
-            <a class="btn-total" href="product-checkout.html">Checkout</a>
-        </div>
-    </aside>
-    <!--== End Aside Cart ==-->
 
     <!--== Start Aside Menu ==-->
     @include('menu')

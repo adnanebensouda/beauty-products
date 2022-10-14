@@ -10,14 +10,13 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
 
-    @include('nav')
     <main class="main-content">
 
         <!--== Start Page Header Area Wrapper ==-->
         <nav aria-label="breadcrumb" class="breadcrumb-style1">
             <div class="container">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                 </ol>
             </div>
@@ -28,94 +27,52 @@
         <section class="section-space">
             <div class="container">
                 <div class="shopping-wishlist-form table-responsive">
-                    <form action="#" method="post">
-                        <table class="table text-center">
-                            <thead>
-                            <tr>
-                                <th class="product-remove">&nbsp;</th>
-                                <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Product name</th>
-                                <th class="product-price">Unit price</th>
-                                <th class="product-stock-status">Stock status</th>
-                                <th class="product-add-to-cart">&nbsp;</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <table class="table text-center">
+                        <thead>
+                        <tr>
+                            <th class="product-remove">&nbsp;</th>
+                            <th class="product-thumbnail">&nbsp;</th>
+                            <th class="product-name">Product name</th>
+                            <th class="product-price">Unit price</th>
+                            <th class="product-stock-status">Quantity</th>
+                            <th class="product-add-to-cart">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach(session()->get('cart' , []) as $id => $prod)
                             <tr class="tbody-item">
                                 <td class="product-remove">
-                                    <a class="remove" href="javascript:void(0)">×</a>
+                                    <a class="remove" href="/delete_item/checkout/{{$id}}">×</a>
                                 </td>
                                 <td class="product-thumbnail">
                                     <div class="thumb">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/shop/cart1.webp" width="68" height="84" alt="Image-HasTech">
+                                        <a>
+                                            <img src="{{$prod['img']}}" width="68" height="84" alt="Image-HasTech">
                                         </a>
                                     </div>
                                 </td>
                                 <td class="product-name">
-                                    <a class="title" href="single-product.html">Condimentum posuere consectetur urna</a>
+                                    <a class="title">{{$prod['name']}}</a>
                                 </td>
                                 <td class="product-price">
-                                    <span class="price">$115.00</span>
+                                    <span class="price">{{$prod['price']}} MAD</span>
                                 </td>
                                 <td class="product-stock-status">
-                                    <span class="wishlist-in-stock">In Stock</span>
+                                    <span class="price">{{$prod['qte']}}</span>
                                 </td>
                                 <td class="product-add-to-cart">
-                                    <a class="btn-shop-cart" href="product-cart.html">Add to Cart</a>
+                                    <form action="/checkout" method="post">
+                                        @csrf
+                                        <input type="number" name="id" value="{{$id}}" hidden>
+                                        <input type="number" name="qte" value="{{$prod['qte']}}" hidden>
+                                        <button class="btn-shop-cart" type="submit">Confirm</button>
+                                    </form>
                                 </td>
+
                             </tr>
-                            <tr class="tbody-item">
-                                <td class="product-remove">
-                                    <a class="remove" href="javascript:void(0)">×</a>
-                                </td>
-                                <td class="product-thumbnail">
-                                    <div class="thumb">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/shop/cart2.webp" width="68" height="84" alt="Image-HasTech">
-                                        </a>
-                                    </div>
-                                </td>
-                                <td class="product-name">
-                                    <a class="title" href="single-product.html">Kaoreet lobortis sagittis laoreet</a>
-                                </td>
-                                <td class="product-price">
-                                    <span class="price">$95.00</span>
-                                </td>
-                                <td class="product-stock-status">
-                                    <span class="wishlist-in-stock">In Stock</span>
-                                </td>
-                                <td class="product-add-to-cart">
-                                    <a class="btn-shop-cart" href="product-cart.html">Add to Cart</a>
-                                </td>
-                            </tr>
-                            <tr class="tbody-item">
-                                <td class="product-remove">
-                                    <a class="remove" href="javascript:void(0)">×</a>
-                                </td>
-                                <td class="product-thumbnail">
-                                    <div class="thumb">
-                                        <a href="single-product.html">
-                                            <img src="assets/images/shop/cart3.webp" width="68" height="84" alt="Image-HasTech">
-                                        </a>
-                                    </div>
-                                </td>
-                                <td class="product-name">
-                                    <a class="title" href="single-product.html">Nostrum exercitationem itae ipsum</a>
-                                </td>
-                                <td class="product-price">
-                                    <span class="price">$79.00</span>
-                                </td>
-                                <td class="product-stock-status">
-                                    <span class="wishlist-in-stock">In Stock</span>
-                                </td>
-                                <td class="product-add-to-cart">
-                                    <a class="btn-shop-cart" href="product-cart.html">Add to Cart</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </form>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -130,80 +87,6 @@
     <!--== Scroll Top Button ==-->
     <div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-angle-up"></span></div>
 
-    <!--== Start Product Quick Wishlist Modal ==-->
-    <aside class="product-action-modal modal fade" id="action-WishlistModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="product-action-view-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <div class="modal-action-messages">
-                            <i class="fa fa-check-square-o"></i> Added to wishlist successfully!
-                        </div>
-                        <div class="modal-action-product">
-                            <div class="thumb">
-                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
-                            </div>
-                            <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!--== End Product Quick Wishlist Modal ==-->
-
-    <!--== Start Product Quick Add Cart Modal ==-->
-    <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="product-action-view-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <div class="modal-action-messages">
-                            <i class="fa fa-check-square-o"></i> Added to cart successfully!
-                        </div>
-                        <div class="modal-action-product">
-                            <div class="thumb">
-                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
-                            </div>
-                            <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!--== End Product Quick Add Cart Modal ==-->
-
-    <!--== Start Aside Search Form ==-->
-    <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
-        <div class="offcanvas-header">
-            <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa fa-close"></i></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="container pt--0 pb--0">
-                <div class="search-box-form-wrap">
-                    <div class="search-note">
-                        <p>Start typing and press Enter to search</p>
-                    </div>
-                    <form action="#" method="post">
-                        <div class="aside-search-form position-relative">
-                            <label for="SearchInput" class="visually-hidden">Search</label>
-                            <input id="SearchInput" type="search" class="form-control" placeholder="Search entire store…">
-                            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!--== End Aside Search Form ==-->
 
     <!--== Start Product Quick View Modal ==-->
     <aside class="product-cart-view-modal modal fade" id="action-QuickViewModal" tabindex="-1" aria-hidden="true">
@@ -219,7 +102,8 @@
                                 <div class="col-lg-6">
                                     <!--== Start Product Thumbnail Area ==-->
                                     <div class="product-single-thumb">
-                                        <img src="assets/images/shop/quick-view1.webp" width="544" height="560" alt="Image-HasTech">
+                                        <img src="assets/images/shop/quick-view1.webp" width="544" height="560"
+                                             alt="Image-HasTech">
                                     </div>
                                     <!--== End Product Thumbnail Area ==-->
                                 </div>
@@ -238,7 +122,10 @@
                                             </div>
                                             <button type="button" class="product-review-show">150 reviews</button>
                                         </div>
-                                        <p class="mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam sequi amet consectetur.</p>
+                                        <p class="mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident
+                                            alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam
+                                            sequi amet consectetur.</p>
                                         <div class="product-details-pro-qty">
                                             <div class="pro-qty">
                                                 <input type="text" title="Quantity" value="01">
@@ -247,7 +134,9 @@
                                         <div class="product-details-action">
                                             <h4 class="price">$254.22</h4>
                                             <div class="product-details-cart-wishlist">
-                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
+                                                <button type="button" class="btn" data-bs-toggle="modal"
+                                                        data-bs-target="#action-CartAddModal">Add to cart
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -263,10 +152,12 @@
     <!--== End Product Quick View Modal ==-->
 
     <!--== Start Aside Cart ==-->
-    <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
+    <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart"
+           aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
-            <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i class="fa fa-chevron-right"></i></button>
+            <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i
+                    class="fa fa-chevron-right"></i></button>
         </div>
         <div class="offcanvas-body">
             <ul class="aside-cart-product-list">

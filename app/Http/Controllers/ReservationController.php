@@ -17,6 +17,11 @@ class ReservationController extends Controller
             "tel" => $request->phone,
             "adress" => $request->address
         ]);
+        $cart = session()->get('cart', []);
+        if (isset($cart[$request->product_id])) {
+            unset($cart[$request->product_id]);
+            session()->put('cart', $cart);
+        }
         return view('good');
     }
 
@@ -31,6 +36,21 @@ class ReservationController extends Controller
         session()->put('cart', $cart);
         $cart = session()->get('cart', []);
         return redirect()->back();
+    }
+
+    protected function delete_item($id)
+    {
+        $cart = session()->get('cart', []);
+        if (isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+        return redirect()->back();
+    }
+
+    public function checkout_multiple()
+    {
+        return view('checkout');
     }
 
 }

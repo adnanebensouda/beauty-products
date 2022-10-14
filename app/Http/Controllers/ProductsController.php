@@ -14,15 +14,15 @@ class ProductsController extends Controller
             ->select('id', 'price', 'description', 'img', 'name')
             ->firstOrFail();
 
-        $cart = session()->get('cart', []);
-
-        return view('product-details', compact('product', 'cart'));
+        return view('product-details', compact('product'));
     }
 
     public function checkout(Request $request)
     {
         $product = Products::query()->where('id', $request->id)
-            ->select('id', 'price', 'name', 'description')->first();
+            ->select('id', 'price', 'name', 'description')
+            ->first();
+
         $results = (object)array(
             'name' => $product->name,
             'total_price' => $product->price * $request->qte,

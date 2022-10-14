@@ -22,6 +22,9 @@ Route::get('/products/{slug}' , [ProductsController::class , 'get_one']);
 Route::post('/checkout' , [ProductsController::class, 'checkout']);
 Route::post('/reservation_one' , [ReservationController::class , 'save_one']);
 Route::post('/add-to-cart' , [ReservationController::class , 'add_to_cart']);
+Route::get('/delete_item/{id}' , [ReservationController::class , 'delete_item']);
+Route::get('/delete_item/checkout/{id}' , [ReservationController::class , 'delete_item']);
+Route::get('/checkout_multiple' , [ReservationController::class , 'checkout_multiple']);
 
 
 Route::get('/contact' , [ProductsController::class , 'contact']);
