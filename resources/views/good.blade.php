@@ -3,7 +3,6 @@
 
 <head>
     @include('css')
-
 </head>
 
 <body>
@@ -11,73 +10,81 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
 
-    <!--== Start Header Wrapper ==-->
     @include('nav')
-    <!--== End Header Wrapper ==-->
 
-    <!--== Start Product Details Area Wrapper ==-->
-
-    <section class="contact-area">
-        <div class="container">
-            <div class="row">
-                <div class="offset-lg-6 col-lg-6">
-                    <div class="section-title position-relative">
-                        <h2 class="title">{{$results->name}}</h2>
-                        <p class="m-0">{{$results->description}}</p>
-                        <p class="m-0"><strong>Qte</strong>: {{$results->qte}}</p>
-                        <p class="m-0"><strong>Price</strong>: {{$results->price}}</p>
-                        <p class="m-0"><strong>Total price</strong>: {{$results->total_price}}</p>
-                        <div class="line-left-style mt-4 mb-1"></div>
+    <main class="main-content">
+        <!--== Start Faq Area Wrapper ==-->
+        <section class="page-not-found-area">
+            <div class="container">
+                <div class="page-not-found">
+                    <img src="assets/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
+                    <div class="alert alert-success" role="alert">
+                        <h3 class="title">You Reservation Has Been Completed Successfully</h3>
                     </div>
-                    <!--== Start Contact Form ==-->
-                    <div class="contact-form">
-                        <form action="reservation_one" method="POST">
-                            @csrf
-                            <input type="number" value="{{$results->id}}" name="product_id" hidden  >
-                            <input type="number" value="{{$results->qte}}" name="qte" hidden>
-                            <input type="total_price" value="{{$results->total_price}}" name="total_price" hidden>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="first_name" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="last_name" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="phone" placeholder="Phone">
-                                    </div>
-                                </div>
 
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" name="address" placeholder="Address"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group mb-0">
-                                        <button class="btn btn-sm" type="submit">SUBMIT</button>
-                                    </div>
-                                </div>
+                    <h5 class="back-btn">Go to <a href="/">Home</a> Page</h5>
+                </div>
+            </div>
+        </section>
+        <!--== End Faq Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+        <!--== Start Footer Main ==-->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="widget-item">
+                            <div class="widget-about">
+                                <a class="widget-logo" href="index.html">
+                                    <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
+                                </a>
+                                <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <!--== End Contact Form ==-->
-
-                    <!--== Message Notification ==-->
-                    <div class="form-message"></div>
+                    <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Information</h4>
+                            <ul class="widget-nav">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="faq.html">Privacy</a></li>
+                                <li><a href="account-login.html">Login</a></li>
+                                <li><a href="product.html">Shop</a></li>
+                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="faq.html">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt-lg-0 mt-6">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Social Info</h4>
+                            <div class="widget-social">
+                                <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="contact-left-img" data-bg-img="assets/images/photos/contact.webp"></div>
-    </section>
+        <!--== End Footer Main ==-->
 
-    <!--== Start Footer Area Wrapper ==-->
-    @include('footer')
+        <!--== Start Footer Bottom ==-->
+        <div class="footer-bottom">
+            <div class="container pt-0 pb-0">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2022 Brancy. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Codecarnival.</a></p>
+                </div>
+            </div>
+        </div>
+        <!--== End Footer Bottom ==-->
+    </footer>
     <!--== End Footer Area Wrapper ==-->
 
     <!--== Scroll Top Button ==-->
@@ -97,8 +104,7 @@
                         </div>
                         <div class="modal-action-product">
                             <div class="thumb">
-                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466"
-                                     height="320">
+                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
                             </div>
                             <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
                         </div>
@@ -123,8 +129,7 @@
                         </div>
                         <div class="modal-action-product">
                             <div class="thumb">
-                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466"
-                                     height="320">
+                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
                             </div>
                             <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
                         </div>
@@ -136,12 +141,10 @@
     <!--== End Product Quick Add Cart Modal ==-->
 
     <!--== Start Aside Search Form ==-->
-    <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch"
-           aria-labelledby="offcanvasTopLabel">
+    <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
             <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                    class="fa fa-close"></i></button>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa fa-close"></i></button>
         </div>
         <div class="offcanvas-body">
             <div class="container pt--0 pb--0">
@@ -152,8 +155,7 @@
                     <form action="#" method="post">
                         <div class="aside-search-form position-relative">
                             <label for="SearchInput" class="visually-hidden">Search</label>
-                            <input id="SearchInput" type="search" class="form-control"
-                                   placeholder="Search entire store…">
+                            <input id="SearchInput" type="search" class="form-control" placeholder="Search entire store…">
                             <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
@@ -177,8 +179,7 @@
                                 <div class="col-lg-6">
                                     <!--== Start Product Thumbnail Area ==-->
                                     <div class="product-single-thumb">
-                                        <img src="assets/images/shop/quick-view1.webp" width="544" height="560"
-                                             alt="Image-HasTech">
+                                        <img src="assets/images/shop/quick-view1.webp" width="544" height="560" alt="Image-HasTech">
                                     </div>
                                     <!--== End Product Thumbnail Area ==-->
                                 </div>
@@ -197,10 +198,7 @@
                                             </div>
                                             <button type="button" class="product-review-show">150 reviews</button>
                                         </div>
-                                        <p class="mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident
-                                            alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam
-                                            sequi amet consectetur.</p>
+                                        <p class="mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam sequi amet consectetur.</p>
                                         <div class="product-details-pro-qty">
                                             <div class="pro-qty">
                                                 <input type="text" title="Quantity" value="01">
@@ -209,9 +207,7 @@
                                         <div class="product-details-action">
                                             <h4 class="price">$254.22</h4>
                                             <div class="product-details-cart-wishlist">
-                                                <button type="button" class="btn" data-bs-toggle="modal"
-                                                        data-bs-target="#action-CartAddModal">Add to cart
-                                                </button>
+                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -227,12 +223,10 @@
     <!--== End Product Quick View Modal ==-->
 
     <!--== Start Aside Cart ==-->
-    <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart"
-           aria-labelledby="offcanvasRightLabel">
+    <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
-            <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i
-                    class="fa fa-chevron-right"></i></button>
+            <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="offcanvas-body">
             <ul class="aside-cart-product-list">
@@ -261,22 +255,69 @@
     <!--== End Aside Cart ==-->
 
     <!--== Start Aside Menu ==-->
-    <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu"
-           aria-labelledby="offcanvasExampleLabel">
+    <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-            <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i
-                    class="fa fa-chevron-left"></i></button>
+            <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="fa fa-chevron-left"></i></button>
         </div>
         <div class="offcanvas-body">
             <div id="offcanvasNav" class="offcanvas-menu-nav">
                 <ul>
                     <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">home</a>
+                        <ul>
+                            <li><a href="index.html">Home One</a></li>
+                            <li><a href="index-two.html">Home Two</a></li>
+                        </ul>
                     </li>
-                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="about-us.html">shop</a></li>
-                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">about</a>
-
+                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="about-us.html">about</a></li>
+                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">shop</a>
+                        <ul>
+                            <li><a href="#" class="offcanvas-nav-item">Shop Layout</a>
+                                <ul>
+                                    <li><a href="product.html">Shop 3 Column</a></li>
+                                    <li><a href="product-four-columns.html">Shop 4 Column</a></li>
+                                    <li><a href="product-left-sidebar.html">Shop Left Sidebar</a></li>
+                                    <li><a href="product-right-sidebar.html">Shop Right Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="offcanvas-nav-item">Single Product</a>
+                                <ul>
+                                    <li><a href="product-details-normal.html">Single Product Normal</a></li>
+                                    <li><a href="product-details.html">Single Product Variable</a></li>
+                                    <li><a href="product-details-group.html">Single Product Group</a></li>
+                                    <li><a href="product-details-affiliate.html">Single Product Affiliate</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="offcanvas-nav-item">Others Pages</a>
+                                <ul>
+                                    <li><a href="product-cart.html">Shopping Cart</a></li>
+                                    <li><a href="product-checkout.html">Checkout</a></li>
+                                    <li><a href="product-wishlist.html">Wishlist</a></li>
+                                    <li><a href="product-compare.html">Compare</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
+                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">Blog</a>
+                        <ul>
+                            <li><a class="offcanvas-nav-item" href="#">Blog Layout</a>
+                                <ul>
+                                    <li><a href="blog.html">Blog Grid</a></li>
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="#">Pages</a>
+                        <ul>
+                            <li><a href="account-login.html">My Account</a></li>
+                            <li><a href="faq.html">Frequently Questions</a></li>
+                            <li><a href="page-not-found.html">Page Not Found</a></li>
+                        </ul>
+                    </li>
+                    <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -285,10 +326,6 @@
 
 </div>
 <!--== Wrapper End ==-->
-
-<!-- JS Vendor, Plugins & Activation Script Files -->
-
-<!-- Vendors JS -->
 @include('js')
 
 </body>
