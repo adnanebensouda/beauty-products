@@ -42,7 +42,7 @@ class ProductsController extends Controller
     public function contact()
     {
         return view('contact');
-<<<<<<< HEAD
+
 }
 public function shop(){
     return view('shop');
@@ -50,8 +50,4 @@ public function shop(){
 public function about(){
     return view('about');
 }
-=======
-    }
-
->>>>>>> 2425dbca86c6eb25ab3b8a4d3bda85a0f8d88f3c
 }
