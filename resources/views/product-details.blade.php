@@ -105,10 +105,8 @@
                             <i class="fa fa-check-square-o"></i> Added to cart successfully!
                         </div>
                         <div class="modal-action-product">
-                            <div class="thumb">
-                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
-                            </div>
-                            <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
+
+                            <h4 class="product-name">{{$product->name}}</h4>
                         </div>
                     </div>
                 </div>

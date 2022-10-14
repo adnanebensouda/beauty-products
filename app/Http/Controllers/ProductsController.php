@@ -12,7 +12,14 @@ class ProductsController extends Controller
     {
         $product = Products::query()->where('slug', $slug)
             ->select('id', 'price', 'description', 'img', 'name')
-            ->first();
+            ->firstOrFail();
+
+//        $cart = session()->get('cart', []);
+//        $cart[$product->id] = ["name" => $product->name , "qte" =>7];
+//        session()->put('cart' , $cart);
+//        $cart = session()->get('cart', []);
+
+
         return view('product-details', compact('product'));
     }
 
