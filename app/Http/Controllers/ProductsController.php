@@ -21,6 +21,8 @@ class ProductsController extends Controller
         return view('checkout');
     }
 
-
+public function contact(){
+        return view('contact');
+}
 
 }
