@@ -15,12 +15,12 @@ class homeController extends Controller
      */
     public function index()
     {
-        $categories =  Category::query()->select('id' , 'name' , 'img' , 'bg_color')
-        ->get();
-        $products = Products::query()->with('category:id,name')
-            ->select('id' , 'name' , 'price' , 'slug' , 'img' , 'category_id' , 'description')
+        $categories = Category::query()->select('id', 'name', 'img', 'bg_color')
             ->get();
-        return view('welcome' ,  compact('categories' , 'products'));
+        $products = Products::query()->with('category:id,name')
+            ->select('id', 'name', 'price', 'slug', 'img', 'category_id', 'description')
+            ->get();
+        return view('welcome', compact('categories', 'products'));
     }
 
     /**
@@ -36,7 +36,7 @@ class homeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,7 +47,7 @@ class homeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +58,7 @@ class homeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +69,8 @@ class homeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +81,7 @@ class homeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
