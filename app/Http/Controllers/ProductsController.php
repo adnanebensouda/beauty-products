@@ -16,7 +16,7 @@ class ProductsController extends Controller
 
         $cart = session()->get('cart', []);
 
-        return view('product-details', compact('product' , 'cart'));
+        return view('product-details', compact('product', 'cart'));
     }
 
     public function checkout(Request $request)
