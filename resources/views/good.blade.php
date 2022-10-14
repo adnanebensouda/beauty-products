@@ -10,59 +10,82 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
 
-
     @include('nav')
 
     <main class="main-content">
-
-        <!--== Start Product Details Area Wrapper ==-->
-        <section class="section-space">
+        <!--== Start Faq Area Wrapper ==-->
+        <section class="page-not-found-area">
             <div class="container">
-                <div class="row product-details">
-                    <div class="col-lg-6">
-                        <div class="product-details-thumb">
-                            <img src="{{$product->img}}" width="570" height="693" alt="Image">
+                <div class="page-not-found">
+                    <img src="assets/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
+                    <div class="alert alert-success" role="alert">
+                        <h3 class="title">You Reservation Has Been Completed Successfully</h3>
+                    </div>
+
+                    <h5 class="back-btn">Go to <a href="/">Home</a> Page</h5>
+                </div>
+            </div>
+        </section>
+        <!--== End Faq Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+        <!--== Start Footer Main ==-->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="widget-item">
+                            <div class="widget-about">
+                                <a class="widget-logo" href="index.html">
+                                    <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
+                                </a>
+                                <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="product-details-content">
-                            <h3 class="product-details-title">{{$product->name}}</h3>
-                            <p>{{$product->description}}</p>
-                            <div class="product-details-qty-list">
-                                <div class="qty-list-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
-                                    <label class="form-check-label" for="qtyList1">{{$product->name}} <b>{{$product->price}} MAD</b></label>
-                                </div>
-                            </div>
-                            <div class="product-details-pro-qty">
-                                <form action="/checkout" method="post">
-                                    @csrf
-                                    <input type="number" value="{{$product->id}}" name="id" hidden>
-                                    <div class="pro-qty">
-                                        <input type="number" name="qte" title="Quantity" value="1" id="qte">
-                                    </div>
-                                    <button type="submit" class="btn" >Checkout</button>
-                                </form>
-                            </div>
-
-                            <div class="product-details-action">
-                                <div class="">
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" onclick="updater()" >Add to cart</button>
-                                </div>
-
+                    <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Information</h4>
+                            <ul class="widget-nav">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="faq.html">Privacy</a></li>
+                                <li><a href="account-login.html">Login</a></li>
+                                <li><a href="product.html">Shop</a></li>
+                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="faq.html">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt-lg-0 mt-6">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Social Info</h4>
+                            <div class="widget-social">
+                                <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </section>
-        <!--== End Product Details Area Wrapper ==-->
+        </div>
+        <!--== End Footer Main ==-->
 
-
-    </main>
-
-    @include('footer')
+        <!--== Start Footer Bottom ==-->
+        <div class="footer-bottom">
+            <div class="container pt-0 pb-0">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2022 Brancy. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Codecarnival.</a></p>
+                </div>
+            </div>
+        </div>
+        <!--== End Footer Bottom ==-->
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
 
     <!--== Scroll Top Button ==-->
     <div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-angle-up"></span></div>
@@ -102,17 +125,14 @@
                             <i class="fa fa-times"></i>
                         </button>
                         <div class="modal-action-messages">
-                            <form action="/add-to-cart" method="post">
-                                @csrf
-                                <h6>Please confirm adding <span id="get_val"></span> items of {{$product->name}}</h6>
-                                <input type="number" value="{{$product->id}}" name="id" hidden>
-                                <input type="number" id="val_input" name="qte" hidden>
-                                <div class="modal-action-product">
-                                    <button class="btn btn-sm search-button" type="submit">Confirm</button>
-                                </div>
-                            </form>
+                            <i class="fa fa-check-square-o"></i> Added to cart successfully!
                         </div>
-
+                        <div class="modal-action-product">
+                            <div class="thumb">
+                                <img src="assets/images/shop/modal1.webp" alt="Organic Food Juice" width="466" height="320">
+                            </div>
+                            <h4 class="product-name"><a href="product-details.html">Readable content DX22</a></h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,7 +208,6 @@
                                             <h4 class="price">$254.22</h4>
                                             <div class="product-details-cart-wishlist">
                                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
-
                                             </div>
                                         </div>
                                     </div>
@@ -307,21 +326,8 @@
 
 </div>
 <!--== Wrapper End ==-->
-
 @include('js')
-
-<script>
-    let updater = () => {
-        let qte = document.getElementById('qte').value
-        document.getElementById('get_val').innerHTML = qte
-        document.getElementById('val_input').value = qte
-
-    }
-</script>
 
 </body>
 
 </html>
-
-
-
