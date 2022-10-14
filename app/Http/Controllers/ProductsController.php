@@ -10,8 +10,10 @@ class ProductsController extends Controller
 
     public function get_one($slug)
     {
-        $product = Products::query()->where('slug' , $slug)->first();
-        return view('product-details');
+        $product = Products::query()->where('slug', $slug)
+            ->select('id', 'price', 'description' , 'img' , 'name')
+            ->first();
+        return view('product-details' , compact('product'));
 
     }
 
