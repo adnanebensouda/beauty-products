@@ -39,7 +39,7 @@
                                     @csrf
                                     <input type="number" value="{{$product->id}}" name="id" hidden>
                                     <div class="pro-qty">
-                                        <input type="number" name="qte" title="Quantity" value="1">
+                                        <input type="number" name="qte" title="Quantity" value="1" id="qte">
                                     </div>
                                     <button type="submit" class="btn" >Checkout</button>
                                 </form>
@@ -47,7 +47,7 @@
 
                             <div class="product-details-action">
                                 <div class="">
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" onclick="updater()" >Add to cart</button>
                                 </div>
 
                             </div>
@@ -102,12 +102,17 @@
                             <i class="fa fa-times"></i>
                         </button>
                         <div class="modal-action-messages">
-                            <i class="fa fa-check-square-o"></i> Added to cart successfully!
+                            <form action="/add-to-cart" method="post">
+                                @csrf
+                                <h6>Please confirm adding <span id="get_val"></span> items of {{$product->name}}</h6>
+                                <input type="number" value="{{$product->id}}" name="id" hidden>
+                                <input type="number" id="val_input" name="qte" hidden>
+                                <div class="modal-action-product">
+                                    <button class="btn btn-sm search-button" type="submit">Confirm</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-action-product">
 
-                            <h4 class="product-name">{{$product->name}}</h4>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -304,6 +309,15 @@
 <!--== Wrapper End ==-->
 
 @include('js')
+
+<script>
+    let updater = () => {
+        let qte = document.getElementById('qte').value
+        document.getElementById('get_val').innerHTML = qte
+        document.getElementById('val_input').value = qte
+
+    }
+</script>
 
 </body>
 
