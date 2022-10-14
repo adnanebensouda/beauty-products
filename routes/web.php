@@ -21,3 +21,9 @@ Route::get('/products/{slug}' , [ProductsController::class , 'get_one']);
 Route::post('/checkout' , [ProductsController::class, 'checkout']);
 
 Route::get('/contact' , [ProductsController::class , 'contact']);
+
+
+Route::get('/shop' , [ProductsController::class , 'shop']);
+
+
+Route::get('/about' , [ProductsController::class , 'about']);

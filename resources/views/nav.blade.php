@@ -13,9 +13,9 @@
                 <div class="header-navigation ps-7">
                     <ul class="main-nav justify-content-start">
 
-                        <li><a href="about-us.html">Home</a></li>
-                        <li><a href="about-us.html">Shop</a></li>
-                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/shop">Shop</a></li>
+                        <li><a href="/about">About</a></li>
 
                     </ul>
                 </div>

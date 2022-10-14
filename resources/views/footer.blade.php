@@ -18,9 +18,9 @@
                     <div class="widget-item">
                         <h4 class="widget-title">Information</h4>
                         <ul class="widget-nav">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about-us.html">About us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/shop">shop</a></li>
+                            <li><a href="/about">about</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="widget-item">
                         <h4 class="widget-title">Social Info</h4>
                         <div class="widget-social">
-                            <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
                             <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
                             <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
                         </div>

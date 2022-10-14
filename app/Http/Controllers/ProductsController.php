@@ -24,5 +24,10 @@ class ProductsController extends Controller
 public function contact(){
         return view('contact');
 }
-
+public function shop(){
+    return view('shop');
+}
+public function about(){
+    return view('about');
+}
 }
