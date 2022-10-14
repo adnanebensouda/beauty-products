@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\homeController;
+use \App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,4 @@ use App\Http\Controllers\homeController;
 */
 
 Route::get('/', [homeController::class , 'index']);
+Route::get('/products/{slug}' , [ProductsController::class , 'get_one']);

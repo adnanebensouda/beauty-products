@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Products;
 
 class homeController extends Controller
 {
@@ -16,7 +17,10 @@ class homeController extends Controller
     {
         $categories =  Category::query()->select('id' , 'name' , 'img' , 'bg_color')
         ->get();
-        return view('welcome' ,  compact('categories'));
+        $products = Products::query()->with('category:id,name')
+            ->select('id' , 'name' , 'price' , 'slug' , 'img' , 'category_id' , 'description')
+            ->get();
+        return view('welcome' ,  compact('categories' , 'products'));
     }
 
     /**

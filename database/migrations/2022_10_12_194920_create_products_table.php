@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
+            $table->string('slug');
             $table->string('img')->nullable();
             $table->string('description')->nullable();
             $table->double('view_count')->default(0);
