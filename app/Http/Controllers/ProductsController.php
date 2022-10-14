@@ -16,7 +16,8 @@ class ProductsController extends Controller
         return view('product-details' , compact('product'));
     }
 
-    public function checkout(){
+    public function checkout(Request $request){
+        return $request;
         return view('checkout');
     }
 

@@ -18,4 +18,4 @@ use \App\Http\Controllers\ProductsController;
 
 Route::get('/', [homeController::class , 'index']);
 Route::get('/products/{slug}' , [ProductsController::class , 'get_one']);
-Route::get('/checkout' , [ProductsController::class, 'checkout']);
+Route::post('/checkout' , [ProductsController::class, 'checkout']);

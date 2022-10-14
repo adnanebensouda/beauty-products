@@ -27,7 +27,7 @@
                     <div class="col-lg-6">
                         <div class="product-details-content">
                             <h3 class="product-details-title">{{$product->name}}</h3>
-
+                            <p>{{$product->description}}</p>
                             <div class="product-details-qty-list">
                                 <div class="qty-list-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="qtyList1" checked>
@@ -35,16 +35,23 @@
                                 </div>
                             </div>
                             <div class="product-details-pro-qty">
-                                <div class="pro-qty">
-                                    <input type="text" title="Quantity" value="01">
-                                </div>
+
+                                    <form action="/checkout" method="post">
+                                        @csrf
+                                        <input type="number" value="{{$product->id}}" name="id" hidden>
+                                        <div class="pro-qty">
+
+                                        <input type="number" name="qte" title="Quantity" value="1">
+                                        </div>
+                                        <button type="submit" class="btn" >Checkout</button>
+                                    </form>
+
+
                             </div>
 
                             <div class="product-details-action">
-                                <div class="product-details-cart-wishlist">
+                                <div class="">
                                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
-                                    &nbsp;
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Checkout</button>
                                 </div>
 
                             </div>
