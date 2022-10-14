@@ -14,8 +14,12 @@ class ProductsController extends Controller
             ->select('id', 'price', 'description' , 'img' , 'name')
             ->first();
         return view('product-details' , compact('product'));
-
     }
+
+    public function checkout(){
+        return view('checkout');
+    }
+
 
 
 }
