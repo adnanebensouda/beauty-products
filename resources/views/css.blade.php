@@ -8,7 +8,7 @@
 <meta name="author" content="codecarnival" />
 
 <!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.webp">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.webp')}}">
 
 <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
 
@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Vendor CSS (Bootstrap & Icon Font) -->
-<link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="{{asset('assets/css/vendor/bootstrap.min.css')}}">
 
 <!-- Plugins CSS (All Plugins Files) -->
 <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper-bundle.min.css')}}">
@@ -26,5 +26,6 @@
 <link rel="stylesheet" href="{{asset('assets/css/plugins/fancybox.min.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/plugins/nice-select.css')}}">
 
+
 <!-- Style CSS -->
-<link rel="stylesheet" href="./assets/css/style.min.css">
+<link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
