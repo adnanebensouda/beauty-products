@@ -20,14 +20,10 @@ use App\Http\Controllers\ReservationController;
 Route::get('/', [homeController::class , 'index']);
 Route::get('/products/{slug}' , [ProductsController::class , 'get_one']);
 Route::post('/checkout' , [ProductsController::class, 'checkout']);
+Route::post('/reservation_one' , [ReservationController::class , 'save_one']);
+Route::post('/add-to-cart' , [ReservationController::class , 'add_to_cart']);
+
 
 Route::get('/contact' , [ProductsController::class , 'contact']);
-
-
-Route::post('/reservation_one' , [ReservationController::class , 'save_one']);
-
-
 Route::get('/shop' , [ProductsController::class , 'shop']);
-
-
 Route::get('/about' , [ProductsController::class , 'about']);

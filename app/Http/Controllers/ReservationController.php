@@ -19,6 +19,20 @@ class ReservationController extends Controller
         ]);
         return view('good');
     }
+
+    public function add_to_cart(Request $request)
+    {
+        $cart = session()->get('cart', []);
+        $cart[$request->id] = ["name" => $request->name,
+            "qte" => $request->qte,
+            "img" => $request->img,
+            "price" => $request->price
+        ];
+        session()->put('cart', $cart);
+        $cart = session()->get('cart', []);
+        return redirect()->back();
+    }
+
 }
 
 

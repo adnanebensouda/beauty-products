@@ -14,13 +14,9 @@ class ProductsController extends Controller
             ->select('id', 'price', 'description', 'img', 'name')
             ->firstOrFail();
 
-//        $cart = session()->get('cart', []);
-//        $cart[$product->id] = ["name" => $product->name , "qte" =>7];
-//        session()->put('cart' , $cart);
-//        $cart = session()->get('cart', []);
+        $cart = session()->get('cart', []);
 
-
-        return view('product-details', compact('product'));
+        return view('product-details', compact('product' , 'cart'));
     }
 
     public function checkout(Request $request)
@@ -42,16 +38,17 @@ class ProductsController extends Controller
     public function contact()
     {
         return view('contact');
-<<<<<<< HEAD
-}
-public function shop(){
-    return view('shop');
-}
-public function about(){
-    return view('about');
-}
-=======
+
     }
 
->>>>>>> 2425dbca86c6eb25ab3b8a4d3bda85a0f8d88f3c
+    public function shop()
+    {
+        return view('shop');
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
 }
