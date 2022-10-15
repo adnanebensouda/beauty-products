@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     use HasFactory;
+
     public $fillable = [
         'product_id',
         'qte',
@@ -16,4 +17,10 @@ class Reservation extends Model
         'tel',
         'adress',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Products::class);
+    }
+
 }
