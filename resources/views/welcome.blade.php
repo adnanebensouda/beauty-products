@@ -82,7 +82,7 @@
 
                         <div class="col-6 col-lg-4 col-lg-3 col-xl-3">
                             <!--== Start Product Category Item ==-->
-                            <a href="product.html" class="product-category-item" data-bg-color="{{$category->bg_color}}" >
+                            <a href="category/{{$category->id}}" class="product-category-item" data-bg-color="{{$category->bg_color}}" >
                                 <img class="icon" src="{{$category->img}}" width="70" height="80" alt="Image-HasTech">
                                 <h3 class="title">{{$category->name}}</h3>
                             </a>

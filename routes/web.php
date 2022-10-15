@@ -25,6 +25,7 @@ Route::post('/add-to-cart' , [ReservationController::class , 'add_to_cart']);
 Route::get('/delete_item/{id}' , [ReservationController::class , 'delete_item']);
 Route::get('/delete_item/checkout/{id}' , [ReservationController::class , 'delete_item']);
 Route::get('/checkout_multiple' , [ReservationController::class , 'checkout_multiple']);
+Route::get('/category/{id}' , [ProductsController::class , 'filter_by_category']);
 
 
 Route::get('/contact' , [ProductsController::class , 'contact']);

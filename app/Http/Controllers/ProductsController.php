@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,17 @@ class ProductsController extends Controller
     public function about()
     {
         return view('about');
+    }
+
+    public function filter_by_category($id)
+    {
+        $products = Products::query()->where('category_id', $id)
+            ->select('id', 'name', 'price', 'slug', 'img', 'description')
+            ->get();
+        $category_name = Category::query()->select('id' , 'name')
+            ->findOrFail($id);
+        return view('shop' , compact('products' , 'category_name'));
+
     }
 
 }
