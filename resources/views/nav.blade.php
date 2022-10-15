@@ -13,7 +13,7 @@
                 <div class="header-navigation">
                     <ul class="main-nav justify-content-center">
                         <li class="has-submenu"><a href="/">home</a></li>
-                        <li class="has-submenu position-static"><a href="/store">shop</a></li>
+                        <li class="has-submenu position-static"><a href="#categories">categories</a></li>
                         <li><a href="/about">about</a></li>
                     </ul>
                 </div>
