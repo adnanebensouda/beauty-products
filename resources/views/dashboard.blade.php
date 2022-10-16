@@ -2,46 +2,56 @@
 
 
 @include('nav')
-<div class="container">
-    <div class="card mt-5">
-        <div class="card-header">
-            Reservations
+@auth()
+    <div class="row">
+        <div class="col-sm-12 mt-5">
+            <ul>
+                <li>
+                    <a href="/mylogin/stats" class="btn btn-info">Products Statistics</a>
+                </li>
+            </ul>
         </div>
-        <div class="carb-body">
-            <table class="table table-dark">
-                <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Product Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total Price</th>
-                    <th scope="col">Client</th>
-                    <th scope="col">Tel</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Created At</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($reservations as $r)
+        <div class="col-sm-12">
+            <div class="card mt-5">
+                <table class="table">
+                    <thead>
                     <tr>
-                        <th scope="row"><img src="{{$r->product->img}}" alt="" style="width: 5rem; height: 5rem"></th>
-                        <td>{{$r->product->name}}</td>
-                        <td>{{$r->product->price}}</td>
-                        <td>{{$r->qte}}</td>
-                        <td>{{$r->price_total}}</td>
-                        <td>{{$r->client}}</td>
-                        <td>{{$r->tel}}</td>
-                        <td>{{$r->adress}}</td>
-                        <td>{{$r->created_at}}</td>
+                        <th scope="col"></th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Tel</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Created At</th>
                     </tr>
-                @endforeach
+                    </thead>
+                    <tbody>
+                    @foreach($reservations as $r)
+                        <tr>
+                            <th scope="row"><img src="{{$r->product->img}}" alt="" style="width: 5rem; height: 3rem">
+                            </th>
+                            <td>{{$r->product->name}}</td>
+                            <td>{{$r->product->price}}</td>
+                            <td>{{$r->qte}}</td>
+                            <td>{{$r->price_total}}</td>
+                            <td>{{$r->client}}</td>
+                            <td>{{$r->tel}}</td>
+                            <td>{{$r->adress}}</td>
+                            <td>{{$r->created_at}}</td>
+                        </tr>
+                    @endforeach
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
+
+
     </div>
 
-</div>
+@endauth
 
 @include('js')

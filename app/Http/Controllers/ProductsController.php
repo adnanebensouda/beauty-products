@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 
 class ProductsController extends Controller
@@ -17,8 +18,12 @@ class ProductsController extends Controller
     public function get_one($slug)
     {
         $product = Products::query()->where('slug', $slug)
-            ->select('id', 'price', 'description', 'img', 'name')
+            ->select('id', 'price', 'description', 'img', 'name', 'view_count')
             ->firstOrFail();
+
+
+        Products::query()->where('id', $product->id)
+            ->update(['view_count' => $product->view_count + 1]);
 
         return view('product-details', compact('product'));
     }
@@ -73,6 +78,14 @@ class ProductsController extends Controller
         return view('dash');
     }
 
+    protected function stats()
+    {
+        $products = Products::query()->select('id', 'name', 'img', 'price', 'view_count')
+            ->orderBy('view_count', 'desc')
+            ->get();
+        return view('stats', compact('products'));
+    }
+
     protected function admin(Request $request)
     {
         $validate = $request->validate([
@@ -92,7 +105,7 @@ class ProductsController extends Controller
                     ->with('product:id,img,price,name')
                     ->orderBy('created_at')
                     ->get();
-                return view('dashboard' , compact('reservations'));
+                return view('dashboard', compact('reservations'));
             } else {
                 session()->put('user_found', 'Wrong Credentials');
                 return redirect()->back();

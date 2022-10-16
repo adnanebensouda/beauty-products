@@ -35,4 +35,5 @@ Route::get('/about' , [ProductsController::class , 'about']);
 Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard' , [ProductsController::class , 'dashboard']);
-Route::post('/mylogin' , [ProductsController::class , 'admin'])->middleware('auth');
+Route::post('/mylogin' , [ProductsController::class , 'admin']);
+Route::get('/mylogin/stats' , [ProductsController::class , 'stats']);
