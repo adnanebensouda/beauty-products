@@ -33,7 +33,7 @@
                             <th scope="row"><img src="{{$r->product->img}}" alt="" style="width: 5rem; height: 3rem">
                             </th>
                             <td>{{$r->product->name}}</td>
-                            <td>{{$r->product->price}}</td>
+                            <td>{{$r->product->price}} MAD</td>
                             <td>{{$r->qte}}</td>
                             <td>{{$r->price_total}}</td>
                             <td>{{$r->client}}</td>
