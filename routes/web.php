@@ -32,7 +32,7 @@ Route::get('/contact' , [ProductsController::class , 'contact']);
 Route::get('/shop' , [ProductsController::class , 'shop']);
 Route::get('/about' , [ProductsController::class , 'about']);
 
-Auth::routes();
+//Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard' , [ProductsController::class , 'dashboard']);
 Route::post('/mylogin' , [ProductsController::class , 'admin']);
