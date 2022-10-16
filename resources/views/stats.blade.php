@@ -28,7 +28,6 @@
                             <th scope="row"><img src="{{$p->img}}" alt="" style="width: 5rem; height: 3rem">
                             </th>
                             <td>{{$p->name}}</td>
-                            <td>{{$p->name}}</td>
                             <td>{{$p->price}}</td>
                             <td>{{$p->view_count}}</td>
                         </tr>
