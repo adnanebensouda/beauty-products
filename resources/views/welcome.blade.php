@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="hero-slide-thumb">
-                                        <img src="assets/images/slider/slider1.webp" width="841" height="832"
+                                        <img style="border-radius:10%" src="assets/images/slider/slider5.webp" width="841" height="832"
                                              alt="Image">
                                     </div>
                                 </div>
