@@ -23,8 +23,8 @@
                         <h2 class="title">{{$results->name}}</h2>
                         <p class="m-0">{{$results->description}}</p>
                         <p class="m-0"><strong>Qte</strong>: {{$results->qte}}</p>
-                        <p class="m-0"><strong>Price</strong>: {{$results->price}}</p>
-                        <p class="m-0"><strong>Total price</strong>: {{$results->total_price}}</p>
+                        <p class="m-0"><strong>Price</strong>: {{$results->price}}MAD</p>
+                        <p class="m-0"><strong>Total price</strong>: {{$results->total_price}}MAD</p>
                         <div class="line-left-style mt-4 mb-1"></div>
                     </div>
                     <!--== Start Contact Form ==-->
