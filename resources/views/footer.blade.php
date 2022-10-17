@@ -43,7 +43,7 @@
     <div class="footer-bottom">
         <div class="container pt-0 pb-0">
             <div class="footer-bottom-content">
-                <p class="copyright">© 2022 badr. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Codecarnival.</a></p>
+                <p class="copyright">© 2022 badr. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">us.</a></p>
             </div>
         </div>
     </div>

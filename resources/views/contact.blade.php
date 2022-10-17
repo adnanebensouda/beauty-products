@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div class="contact-left-img" data-bg-img="assets/images/photos/contact.webp"></div>
+        <div class="contact-left-img" data-bg-img="assets/images/photos/contact.png"></div>
     </section>
 
     <!--== Start Footer Area Wrapper ==-->

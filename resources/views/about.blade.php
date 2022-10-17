@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="col-md-5 col-lg-5 col-xl-7">
                                     <div class="page-header-thumb">
-                                        <img src="assets/images/photos/about1.webp" width="570" height="669" alt="Image">
+                                        <img src="assets/images/photos/about1.png" width="570" height="669" alt="Image">
                                     </div>
                                 </div>
                             </div>
