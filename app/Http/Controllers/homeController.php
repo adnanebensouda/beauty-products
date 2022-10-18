@@ -20,7 +20,11 @@ class homeController extends Controller
         $products = Products::query()->with('category:id,name')
             ->select('id', 'name', 'price', 'slug', 'img', 'category_id', 'description')
             ->get();
-        return view('welcome', compact('categories', 'products'));
+        $top_product = Products::query()->orderBy('view_count', 'desc')
+            ->select('id', 'name', 'img', 'slug', 'description')
+            ->limit(2)
+            ->get();
+        return view('welcome', compact('categories', 'products', 'top_product'));
     }
 
     /**
