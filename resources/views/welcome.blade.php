@@ -30,7 +30,7 @@
                                                                                   width="427" height="232" alt="Image">
                                             </div>
                                             <h2 class="hero-slide-title">{{$p->name}}</h2>
-                                            <p class="hero-slide-desc">{{$p->description}}</p>
+{{--                                            <p class="hero-slide-desc">{{$p->description}}</p>--}}
                                             <a class="btn btn-border-dark" href="/products/{{$p->slug}}">BUY NOW</a>
                                         </div>
                                     </div>
