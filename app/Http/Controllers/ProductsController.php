@@ -103,7 +103,7 @@ class ProductsController extends Controller
 
                 $reservations = Reservation::query()->select("id", "product_id", "qte", "price_total", "client", "tel", "adress", "created_at")
                     ->with('product:id,img,price,name')
-                    ->orderBy('created_at')
+                    ->latest()
                     ->get();
                 return view('dashboard', compact('reservations'));
             } else {
