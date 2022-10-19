@@ -9,7 +9,7 @@
                     <div class="widget-item">
                         <div class="widget-about">
                             <a class="widget-logo" href="/">
-                                <img src="assets/images/logoo.webp" width="160" height="100" alt="Logo">
+                                <img src="{{asset("assets/images/logo.png")}}" width="160" height="100" alt="Logo">
                             </a>
                         </div>
                     </div>
