@@ -17,7 +17,7 @@
             <div class="container">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                    <li class="breadcrumb-item active" aria-current="page">رجوع</li>
                 </ol>
             </div>
         </nav>
@@ -32,9 +32,9 @@
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-thumbnail">&nbsp;</th>
-                            <th class="product-name">Product name</th>
-                            <th class="product-price">Unit price</th>
-                            <th class="product-stock-status">Quantity</th>
+                            <th class="product-name">اسم المنتج</th>
+                            <th class="product-price">سعر</th>
+                            <th class="product-stock-status">كمية</th>
                             <th class="product-add-to-cart">&nbsp;</th>
                         </tr>
                         </thead>
@@ -65,7 +65,7 @@
                                         @csrf
                                         <input type="number" name="id" value="{{$id}}" hidden>
                                         <input type="number" name="qte" value="{{$prod['qte']}}" hidden>
-                                        <button class="btn-shop-cart" type="submit">Confirm</button>
+                                        <button class="btn-shop-cart" type="submit">اشتري الآن</button>
                                     </form>
                                 </td>
 

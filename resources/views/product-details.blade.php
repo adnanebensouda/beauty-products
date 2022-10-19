@@ -41,13 +41,13 @@
                                     <div class="pro-qty">
                                         <input type="number" name="qte" title="Quantity" value="1" id="qte">
                                     </div>
-                                    <button type="submit" class="btn" >Checkout</button>
+                                    <button type="submit" class="btn" >اشتري الآن</button>
                                 </form>
                             </div>
 
                             <div class="product-details-action">
                                 <div class="">
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" onclick="updater()" >Add to cart</button>
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" onclick="updater()" >أضف إلى العربة</button>
                                 </div>
 
                             </div>
@@ -104,14 +104,14 @@
                         <div class="modal-action-messages">
                             <form action="/add-to-cart" method="post">
                                 @csrf
-                                <h6>Please confirm adding <span id="get_val"></span> items of {{$product->name}}</h6>
+                                <h6>تم إضافة عنصر جديد إلى عربة  <span id="get_val"></span> التسوق الخاصة بك. لديك الآن {{$product->name}}</h6>
                                 <input type="number" value="{{$product->id}}" name="id" hidden>
                                 <input type="number" id="val_input" name="qte" hidden>
                                 <input type="text" value="{{$product->name}}" name="name" hidden>
                                 <input type="text" value="{{$product->img}}" name="img" hidden>
                                 <input type="text" value="{{$product->price}}" name="price" hidden>
                                 <div class="modal-action-product">
-                                    <button class="btn btn-sm search-button" type="submit">Confirm</button>
+                                    <button class="btn btn-sm search-button" type="submit">استمر بالتسوق</button>
                                 </div>
                             </form>
                         </div>

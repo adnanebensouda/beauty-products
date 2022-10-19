@@ -22,9 +22,9 @@
                     <div class="section-title position-relative">
                         <h2 class="title">{{$results->name}}</h2>
                         <p class="m-0">{{$results->description}}</p>
-                        <p class="m-0"><strong>Qte</strong>: {{$results->qte}}</p>
-                        <p class="m-0"><strong>Price</strong>: {{$results->price}}MAD</p>
-                        <p class="m-0"><strong>Total price</strong>: {{$results->total_price}}MAD</p>
+                        <p class="m-0"><strong>كمية</strong>: {{$results->qte}}</p>
+                        <p class="m-0"><strong>السعر DH</strong>: {{$results->price}}</p>
+                        <p class="m-0"><strong>السعر الكلي DH</strong>: {{$results->total_price}}</p>
                         <div class="line-left-style mt-4 mb-1"></div>
                     </div>
                     <!--== Start Contact Form ==-->
@@ -37,28 +37,28 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input required class="form-control" type="text" name="first_name" placeholder="First Name">
+                                        <input required class="form-control" type="text" name="first_name" placeholder="الاسم الشخصي">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input required class="form-control" type="text" name="last_name" placeholder="Last Name">
+                                        <input required class="form-control" type="text" name="last_name" placeholder="اسم العائلي">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input required class="form-control" type="text" name="phone" placeholder="Phone">
+                                        <input required class="form-control" type="text" name="phone" placeholder="رقم الهاتف">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea required class="form-control" name="address" placeholder="Address"></textarea>
+                                        <textarea required class="form-control" name="address" placeholder="عنوان المنزل"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group mb-0">
-                                        <button class="btn btn-sm" type="submit">SUBMIT</button>
+                                        <button class="btn btn-sm" type="submit">دفع الآن</button>
                                     </div>
                                 </div>
                             </div>

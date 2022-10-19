@@ -19,14 +19,14 @@
                                 <div class="col-md-7 col-lg-7 col-xl-5">
                                     <div class="page-header-content">
                                         <div class="title-img"><img src="assets/images/photos/about-title.webp" alt="Image"></div>
-                                        <h2 class="page-header-title">We, are Brancy</h2>
-                                        <h4 class="page-header-sub-title">Best cosmetics provider</h4>
-                                        <p class="page-header-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</p>
+                                        <h2 class="page-header-title">nejema</h2>
+                                        <h4 class="page-header-sub-title">nejema produit</h4>
+                                        <p class="page-header-desc">للمساعدة يمكنك الاتصال بنا على البريد الإلكتروني nejema.company@gmail.com</p>
                                     </div>
                                 </div>
                                 <div class="col-md-5 col-lg-5 col-xl-7">
                                     <div class="page-header-thumb">
-                                        <img src="assets/images/photos/about1.png" width="570" height="669" alt="Image">
+                                        <img style="border-radius:10% " src="assets/images/photos/about1.png" width="570" height="669" alt="Image">
                                     </div>
                                 </div>
                             </div>
@@ -126,8 +126,8 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <!--== Start Product Thumbnail Area ==-->
-                                        <div class="product-single-thumb">
-                                            <img src="assets/images/shop/quick-view1.webp" width="544" height="560" alt="Image-HasTech">
+                                        <div  class="product-single-thumb">
+                                            <img  src="assets/images/shop/quick-view1.webp" width="95" height="68" alt="Image-HasTech">
                                         </div>
                                         <!--== End Product Thumbnail Area ==-->
                                     </div>
@@ -181,7 +181,7 @@
                     <li class="aside-product-list-item">
                         <a href="#/" class="remove">×</a>
                         <a href="product-details.html">
-                            <img src="assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
+                            <img  src="assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
                             <span class="product-title">Leather Mens Slipper</span>
                         </a>
                         <span class="product-price">1 × £69.99</span>

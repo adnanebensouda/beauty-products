@@ -9,7 +9,7 @@
                     <div class="widget-item">
                         <div class="widget-about">
                             <a class="widget-logo" href="/">
-                                <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
+                                <img src="assets/images/logoo.webp" width="160" height="100" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -19,7 +19,6 @@
                         <h4 class="widget-title">Information</h4>
                         <ul class="widget-nav">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/shop">shop</a></li>
                             <li><a href="/about">about</a></li>
                         </ul>
                     </div>
@@ -28,9 +27,8 @@
                     <div class="widget-item">
                         <h4 class="widget-title">Social Info</h4>
                         <div class="widget-social">
-                            <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/nejema.store/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
                             <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
-                            <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +41,7 @@
     <div class="footer-bottom">
         <div class="container pt-0 pb-0">
             <div class="footer-bottom-content">
-                <p class="copyright">© 2022 badr. Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">us.</a></p>
+                <p class="copyright">© 2022 nejema copyright    <i class="fa fa-heart"> </i> حقوق النشر</p>
             </div>
         </div>
     </div>
