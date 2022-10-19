@@ -1,8 +1,8 @@
 <!--== Start Aside Cart ==-->
 <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-        <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
-        <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i class="fa fa-chevron-right"></i></button>
+        <h1 class="d-none" id="offcanvasRightLabel">عربة التسوق</h1>
+        <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">عربة التسوق <i class="fa fa-chevron-right"></i></button>
     </div>
 
 
@@ -19,7 +19,7 @@
                 </li>
             @endforeach
         </ul>
-        <a class="btn-total" href="/checkout_multiple">Checkout</a>
+        <a class="btn-total" href="/checkout_multiple">اشتري الآن</a>
     </div>
 </aside>
 <!--== End Aside Cart ==-->

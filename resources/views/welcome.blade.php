@@ -31,7 +31,7 @@
                                             </div>
                                             <h2 class="hero-slide-title">{{$p->name}}</h2>
 {{--                                            <p class="hero-slide-desc">{{$p->description}}</p>--}}
-                                            <a class="btn btn-border-dark" href="/products/{{$p->slug}}">BUY NOW</a>
+                                            <a class="btn btn-border-dark" href="/products/{{$p->slug}}">اشتري الآن</a>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -54,9 +54,7 @@
                 <div class="hero-slider-pagination"></div>
             </div>
             <div class="hero-slide-social-media">
-                <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i
-                        class="fa fa-pinterest-p"></i></a>
-                <a href="https://instagram.com/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.instagram.com/nejema.store/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
             </div>
         </section>
@@ -93,8 +91,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title text-center">
-                            <h2 class="title">Top Products</h2>
-                            <p>Top products</p>
+                            <h2 class="title">أهم المنتجات</h2>
                         </div>
                     </div>
                 </div>
@@ -119,20 +116,7 @@
                                         <span class="price-old">{{$product->price + 67}} MAD</span>
                                     </div>
                                 </div>
-                                <div class="product-action-bottom">
-                                    <button type="button" class="product-action-btn action-btn-quick-view"
-                                            data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                        <i class="fa fa-expand"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-wishlist"
-                                            data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                        <i class="fa fa-heart-o"></i>
-                                    </button>
-                                    <button type="button" class="product-action-btn action-btn-cart"
-                                            data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                        <span>Add to cart</span>
-                                    </button>
-                                </div>
+
                             </div>
                             <!--== End prPduct Item ==-->
                         </div>

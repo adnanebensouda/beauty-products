@@ -9,7 +9,6 @@
                     <ul>
                         <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="/">home</a>
                         </li>
-                        <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="/shop">shop</a></li>
                         <li class="offcanvas-nav-parent"><a class="offcanvas-nav-item" href="/about">about</a>
 
                         </li>
