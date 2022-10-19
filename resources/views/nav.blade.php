@@ -5,7 +5,7 @@
             <div class="col-5 col-sm-6 col-lg-3">
                 <div class="header-logo">
                     <a href="/">
-                        <img class="logo-main" src="assets/images/logo.svg" width="95" height="68" alt="Logo"/>
+                        <img class="logo-main" src="{{asset("assets/images/logo.png")}}" width="95" height="68" alt="Logo" style="width: 95px !important;" />
                     </a>
                 </div>
             </div>
