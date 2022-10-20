@@ -10,16 +10,65 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
 
-    @include('nav')
+    <header class="header-area sticky-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-5 col-sm-6 col-lg-3">
+                    <div class="header-logo">
+                        <a href="/">
+                            <img class="logo-main" src="{{asset("assets/images/logo.png")}}" width="95" height="68" alt="Logo"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="header-navigation">
+                        <ul class="main-nav justify-content-center">
+                            <li class="has-submenu"><a href="/">home</a></li>
+                            <li class="has-submenu position-static"><a href="#categories">categories</a></li>
+                            <li><a href="/about">about</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-7 col-sm-6 col-lg-3">
+                    <div class="header-action justify-content-end">
+                        <button class="header-action-btn" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#AsideOffcanvasCart" aria-controls="AsideOffcanvasCart">
+                            <span class="icon">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect class="icon-rect" width="30" height="30" fill="url(#pattern2)"/>
+                <defs>
+                  <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_504:9" transform="scale(0.0333333)"/>
+                  </pattern>
+                  <image id="image0_504:9" width="30" height="30" xlink:href=""/>
+                </defs>
+              </svg>
+            </span>
+                        </button>
+
+                        <button class="header-menu-btn" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--== End Header Wrapper ==-->
+    <!--== End Header Wrapper ==-->
 
     <main class="main-content">
         <!--== Start Faq Area Wrapper ==-->
         <section class="page-not-found-area">
             <div class="container">
                 <div class="page-not-found">
-                    <img src="assets/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
+                    <img src="assets/images/photos/giphy.gif" width="500" height="538" alt="Image">
                     <div class="alert alert-success" role="alert">
-                        <h4 class="title">You Reservation Has Been Completed Successfully</h4>
+                        <h4 class="title">لقد اكتمل الحجز الخاص بك بنجاح</h4>
                     </div>
 
                     <h5 class="back-btn">Go to <a href="/">Home</a> Page</h5>
@@ -30,49 +79,7 @@
     </main>
 
     <!--== Start Footer Area Wrapper ==-->
-    <footer class="footer-area">
-        <!--== Start Footer Main ==-->
-        <div class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="widget-item">
-                            <div class="widget-about">
-                                <a class="widget-logo" href="index.html">
-                                    <img src="assets/images/logo.webp" width="95" height="68" alt="Logo">
-                                </a>
-                                <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
-                        <div class="widget-item">
-                            <h4 class="widget-title">Information</h4>
-                            <ul class="widget-nav">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="about-us.html">About us</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="faq.html">Privacy</a></li>
-                                <li><a href="account-login.html">Login</a></li>
-                                <li><a href="product.html">Shop</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="faq.html">FAQs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mt-lg-0 mt-6">
-                        <div class="widget-item">
-                            <h4 class="widget-title">Social Info</h4>
-                            <div class="widget-social">
-                                <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    @include('footer')
         <!--== End Footer Main ==-->
 
         <!--== Start Footer Bottom ==-->
