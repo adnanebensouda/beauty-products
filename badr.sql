@@ -1,261 +1,350 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: badr
--- ------------------------------------------------------
--- Server version	8.0.30-0ubuntu0.20.04.2
+-- Host: localhost:3306
+-- Generation Time: Oct 20, 2022 at 05:40 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `badr`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `categories` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bg_color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bg_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'beauty','assets/images/shop/category/4.webp','#dcffd2',NULL,NULL),(2,'cosmitic','assets/images/shop/category/1.webp','#FFEDB4',NULL,NULL),(3,'health','assets/images/shop/category/6.webp','#DFE4FF',NULL,NULL),(4,'makeup','assets/images/shop/category/3.webp','#FFEACC',NULL,NULL);
-/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `categories` (`id`, `name`, `img`, `bg_color`, `created_at`, `updated_at`) VALUES
+(1, 'beauty', 'assets/images/shop/category/4.webp', '#dcffd2', NULL, NULL),
+(2, 'cosmitic', 'assets/images/shop/category/1.webp', '#FFEDB4', NULL, NULL),
+(3, 'health', 'assets/images/shop/category/6.webp', '#DFE4FF', NULL, NULL),
+(4, 'makeup', 'assets/images/shop/category/3.webp', '#FFEACC', NULL, NULL);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `failed_jobs`
 --
 
-DROP TABLE IF EXISTS `failed_jobs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `failed_jobs` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+  `id` bigint UNSIGNED NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `failed_jobs`
---
-
-LOCK TABLES `failed_jobs` WRITE;
-/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `migrations` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
 --
 
-LOCK TABLES `migrations` WRITE;
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_10_12_194920_create_products_table',1),(6,'2022_10_12_194947_create_categories_table',1),(7,'2022_10_12_195026_create_reservations_table',1);
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2022_10_12_194920_create_products_table', 1),
+(6, '2022_10_12_194947_create_categories_table', 1),
+(7, '2022_10_12_195026_create_reservations_table', 1);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  KEY `password_resets_email_index` (`email`)
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `password_resets`
---
-
-LOCK TABLES `password_resets` WRITE;
-/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
-/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `personal_access_tokens`
 --
 
-DROP TABLE IF EXISTS `personal_access_tokens`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `id` bigint UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `personal_access_tokens`
---
-
-LOCK TABLES `personal_access_tokens` WRITE;
-/*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
-/*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(8,2) NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `view_count` double NOT NULL DEFAULT '0',
-  `category_id` bigint unsigned NOT NULL,
+  `category_id` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'vernis',55.00,'vernis-129846','/img/skin editor.jpg.png',' ',0,1,NULL,'2022-10-16 10:26:24'),(2,'tissus',69.00,'tissus-214981','/img/tissus.png',' ',1,1,NULL,'2022-10-16 19:21:10'),(3,'skin editor',99.00,'skin-editor-214981209','/img/vernis.png',' ',0,1,NULL,'2022-10-16 10:26:12'),(4,'hair brush',79.00,'hair-brush-21840128','/img/hair brush.png',' ',0,2,NULL,'2022-10-16 12:02:30'),(5,'hair-drayer',219.00,'hair-drayer-238120','/img/hair drayer.png',' ',0,2,NULL,'2022-10-16 12:07:27'),(6,'3x1',239.00,'3x1-123129','/img/3x1.png',' ',0,3,NULL,NULL),(7,'back',219.00,'back-12312','/img/back.png',' ',0,3,NULL,NULL),(8,'steamer',369.00,'steamer-1231','/img/steamer.png',' ',0,3,NULL,NULL),(9,'tapis',199.00,'tapis-123812','/img/tapis.jpg',' ',0,3,NULL,NULL),(10,'blusher',60.00,'blusher-12312','/img/blusher.png',' ',0,4,NULL,NULL),(11,'browfix',90.00,'browfix-12312','/img/browfix.png',' ',0,4,NULL,NULL),(12,'fondition',130.00,'fondition-1234124','/img/fondition.png',' ',0,4,NULL,NULL),(13,'lipgloss',90.00,'lipgloss-12312','/img/lipgloss.png',' ',0,4,NULL,NULL),(14,'mascara',80.00,'mascara-12312','/img/mascara.png',' ',0,4,NULL,NULL),(15,'palette',90.00,'palette-48129048','/img/palette.png',' ',0,4,NULL,NULL),(16,'palettes',199.00,'palettes-1239012','/img/palettes.png',' ',0,4,NULL,NULL),(17,'3x1',99.00,'3x1-12379821','/img/3x1.jpg.png',NULL,0,4,NULL,NULL),(18,'bb cream',99.00,'bb-cream-859043906','/img/bb cream.png',NULL,0,4,NULL,NULL),(19,'concealer',89.00,'concealer-3583490','/img/concealer.png',NULL,0,4,NULL,NULL),(22,'farajoux',89.00,'farajoux-2189','/img/farajoux.png',NULL,0,4,NULL,NULL),(23,'gel eyliner',89.00,'gel-eyliner-32r90823','/img/gel eyliner.png',NULL,0,4,NULL,NULL),(24,'rouge a levre',69.00,'rouge-a-levre-38249023','/img/rouge a levre.png',NULL,0,4,NULL,NULL),(25,'vernis',25.00,'vernis-2347923','/img/vernis.png',NULL,0,4,NULL,NULL),(26,'verniss',25.00,'verniss-589034','/img/verniss.png',NULL,0,4,NULL,NULL),(27,'organiser',69.00,'organiser-21348921','/img/organiser.png',NULL,0,2,NULL,NULL),(28,'pack',129.00,'pack-1230912','/img/pack.png',NULL,0,2,NULL,NULL),(29,'push',59.00,'push-213120','/img/push.png',NULL,0,2,NULL,NULL),(30,'socks',49.00,'socks-4812904','/img/socks.png',NULL,0,2,NULL,NULL);
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `products` (`id`, `name`, `price`, `slug`, `img`, `description`, `view_count`, `category_id`, `created_at`, `updated_at`) VALUES
+(2, 'tissus', 69.00, 'tissus-214981', '/img/tissus.png', ' ', 1, 1, NULL, '2022-10-16 19:21:10'),
+(4, 'hair brush', 79.00, 'hair-brush-21840128', '/img/hair brush.png', ' ', 1, 2, NULL, '2022-10-20 15:30:07'),
+(5, 'hair-drayer', 219.00, 'hair-drayer-238120', '/img/hair drayer.png', ' ', 0, 2, NULL, '2022-10-16 12:07:27'),
+(6, '3x1', 239.00, '3x1-123129', '/img/3x1.png', ' ', 0, 3, NULL, NULL),
+(7, 'back', 219.00, 'back-12312', '/img/back.png', ' ', 0, 3, NULL, NULL),
+(8, 'steamer', 369.00, 'steamer-1231', '/img/steamer.png', ' ', 0, 3, NULL, NULL),
+(9, 'tapis', 199.00, 'tapis-123812', '/img/tapis.jpg', ' ', 0, 3, NULL, NULL),
+(10, 'TOPFACE PRIMER BASE MATTE TRANSPARENT 02', 99.00, 'TOPFACE PRIMER BASE MATTE TRANSPARENT 02-12312', '/img/TOPFACE PRIMER BASE MATTE TRANSPARENT 02.jpg', 'L’extrait de blé et l’huile de jojoba dans son contenu enrichi nourrissent et hydratent la peau tout en aidant à égaliser le teint.', 2, 4, NULL, '2022-10-20 13:51:23'),
+(11, 'TOPFACE MATTE LIPSTICK', 69.00, 'TOPFACE MATTE LIPSTICK-589034', '/img/TOPFACE MATTE LIPSTICK.jpg', 'L’huile de coco dans son contenu; Tout en aidant à hydrater et nourrir les lèvres, sa texture douce offre un confort d’application facile.', 5, 4, NULL, '2022-10-20 13:53:34'),
+(12, 'TOPFACE EXTREME MATTE LIP PAINT\r\n', 79.00, 'TOPFACE EXTREME MATTE LIP PAINT-589039', '/img/TOPFACE EXTREME MATTE LIP PAINT\r\n.jpg', 'Huile de macadamia et vitamine E dans sa formule; tout en hydratant vos lèvres, il donne une apparence lisse.\r\nIl offre une apparence mate et permanente qui dure jusqu’à 12 heures sans sensation de sécheresse sur vos lèvres.', 6, 4, NULL, '2022-10-20 13:54:22'),
+(13, 'L’OREAL ACCORD PARFAIT CORRECTEUR', 69.00, 'L’OREAL ACCORD PARFAIT CORRECTEUR-589633', '/img/L’OREAL ACCORD PARFAIT CORRECTEUR\r\n.jpg', 'Texture fine et couvrance parfaite : sa formule hydratante camoufle cernes et imperfections sans marquer et sans effet matière. Elle s’estompe facilement pour une couvrance confortable et lumineuse toute la journée.', 7, 4, NULL, '2022-10-20 13:59:43'),
+(14, 'Topface Sensitive 3in1 Concealer Contour Foundation (Vitamin & Prebiotic Complex)', 89.00, 'Topface Sensitive 3in1 Concealer Contour Foundation (Vitamin & Prebiotic Complex)-589633', '/img/Topface Sensitive 3in1 Concealer Contour Foundation (Vitamin & Prebiotic Complex)\r\n.jpg', 'Un fond de teint anti-cernes qui minimise l’apparence des ridules, aide à hydrater la peau contre le dessèchement.', 8, 4, NULL, '2022-10-20 14:03:35'),
+(15, 'TOPFACE Skin Editor Visible Age Reset Concealer', 79.00, 'TOPFACE Skin Editor Visible Age Reset Concealer-589633', '/img/TOPFACE Skin Editor Visible Age Reset Concealer.jpg', 'Bien qu’il masque les cercles de couleur foncée grâce à ses excellentes capacités de dissimulation, il donne un aspect éclairant et rafraîchissant à la peau toute la journée. Sa formule spéciale contrôlant l’éclat donne un fini mat à votre peau.', 10, 4, NULL, '2022-10-20 14:11:46'),
+(16, 'TOPFACE MAKE-UP STYLE SENSITIVE PRIMER SMOOTH PROTECT 001', 79.00, 'TOPFACE MAKE-UP STYLE SENSITIVE PRIMER SMOOTH PROTECT 001-589633', '/img/TOPFACE MAKE-UP STYLE SENSITIVE PRIMER SMOOTH PROTECT 001.jpg', 'Bien qu’il masque les cercles de couleur foncée A une teinte verte et vise spécifiquement à neutraliser les rougeurs de la peau.\r\n', 9, 4, NULL, '2022-10-20 14:05:42'),
+(17, 'TOPFACE BB SKIN EDITOR MATTE FINISH FOUNDATION', 89.00, 'TOPFACE BB SKIN EDITOR MATTE FINISH FOUNDATION-589633', '/img/TOPFACE BB SKIN EDITOR MATTE FINISH FOUNDATION.jpg', 'La permanence jusqu’à 12 heures, la texture légèrement soyeuse et le contenu enrichi en taurine végétale fournissent 7 caractéristiques distinctes ensemble.\r\n', 9, 4, NULL, '2022-10-20 14:05:42'),
+(18, 'CATRICE – POUDRE « HIGHLIGHTING HIGH GLOW »', 89.00, 'CATRICE – POUDRE « HIGHLIGHTING HIGH GLOW »-589633', '/img/CATRICE – POUDRE « HIGHLIGHTING HIGH GLOW ».jpg', 'Pour un look radieux,\r\nTexture cuite douce,\r\nAvec des pigments ultra fins réflecteurs de lumière.\r\n', 9, 4, NULL, '2022-10-20 14:05:42'),
+(19, 'TOPFACE HIGHLIGHTER POWDER INSTYLE', 89.00, 'TOPFACE HIGHLIGHTER POWDER INSTYLE-539633', '/img/TOPFACE HIGHLIGHTER POWDER INSTYLE.jpg', 'USING: With a highlighter brush or your fingertips you can apply to your cheekbones, on the lips, eye springs, under eyebrows, nose bone, jaw and decollete with slight touch.', 10, 4, NULL, '2022-10-20 14:17:32'),
+(20, 'TOPFACE SKINWEAR MATTE EFFECT POWDER', 89.00, 'TOPFACE SKINWEAR MATTE EFFECT POWDER-589034', '/img/TOPFACE SKINWEAR MATTE EFFECT POWDER.jpg', 'Alors que la vitamine E dans sa formule aide votre peau à protéger son hydratation, sa forme parfaite offre une persistance toute la journée sans avoir besoin d’une sensation rafraîchissante.', 1, 4, NULL, '2022-10-20 13:41:04'),
+(21, 'CATRICE – FARD À JOUE BLUSH BOX MULTICOLOUR', 89.00, 'CATRICE – FARD À JOUE BLUSH BOX MULTICOLOUR-580633', '/img/CATRICE – FARD À JOUE BLUSH BOX MULTICOLOUR.jpg', 'Ce blush poudre multicolore met en valeur le visage avec un scintillement subtile superbe,\r\nAppliquez-le simplement sur les pommettes avec un pinceau poudre ou blush puis estompez le délicatement vers les tempes.', 10, 4, NULL, '2022-10-20 14:17:32'),
+(22, 'TOPFACE Skin Editor Matte Longlasting Foundation', 89.00, 'TOPFACE Skin Editor Matte Longlasting Foundation-580633', '/img/TOPFACE Skin Editor Matte Longlasting Foundation.jpg', 'La structure parfaite se dispersant facilement sur la peau offre un aspect mat et velouté. Ses capacités anti-cernes du moyen au haut s’intègrent à votre peau sans provoquer de sensation de lourdeur.', 10, 4, NULL, '2022-10-20 14:17:32'),
+(24, 'TOPFACE BAKED CHOICE RICH TOUCH POWDER', 89.00, 'TOPFACE BAKED CHOICE RICH TOUCH POWDER-580633', '/img/TOPFACE BAKED CHOICE RICH TOUCH POWDER.jpg', 'Avec sa formule unique et ses couleurs vives, il donne un aspect lisse et attrayant.\r\nLe contenu enrichi en complexe minéral et en vitamine E donne à la peau un aspect sain et énergique.', 10, 4, NULL, '2022-10-20 14:17:32'),
+(25, 'TOPFACE COLOR REVELATION NAIM ENAMEL', 25.00, 'TOPFACE COLOR REVELATION NAIM ENAMEL-580633', '/img/TOPFACE COLOR REVELATION NAIM ENAMEL.jpg', 'Appliquer directement avec le pinceau applicateur.', 11, 4, NULL, '2022-10-20 14:28:10'),
+(26, 'TOPFACE LASTING COLOR NAIL ENAMEL', 30.00, 'TOPFACE LASTING COLOR NAIL ENAMEL-580633', '/img/TOPFACE LASTING COLOR NAIL ENAMEL.jpg', 'Topface présente sa nouvelle série «Topface Lasting Color» avec 95 couleurs superbes et saturées et durables! Avec ses couleurs intenses, sa couverture longue durée, il offre une manucure soignée.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(27, 'organiser', 69.00, 'organiser-21348921', '/img/organiser.png', NULL, 0, 2, NULL, NULL),
+(28, 'pack', 129.00, 'pack-1230912', '/img/pack.png', NULL, 0, 2, NULL, NULL),
+(29, 'push', 59.00, 'push-213120', '/img/push.png', NULL, 0, 2, NULL, NULL),
+(30, 'socks', 49.00, 'socks-4812904', '/img/socks.png', NULL, 0, 2, NULL, NULL),
+(31, 'TOPFACE NAIL THERAPY RIDGE ERASER', 49.00, 'TOPFACE NAIL THERAPY RIDGE ERASER-580633', '/img/TOPFACE NAIL THERAPY RIDGE ERASER.jpg', 'La formule du vernis est conçue pour lisser les rugosités et les imperfections à la surface des ongles,\r\nAide à prévenir le jaunissement et le fendillement des ongles. La vitamine E dans la composition nourrit la surface de l’ongle.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(32, 'TOPFACE NAIL THERAPY MATTE APPEARENCE', 49.00, 'TOPFACE NAIL THERAPY MATTE APPEARENCE-580633', '/img/TOPFACE NAIL THERAPY MATTE APPEARENCE.jpg', 'La formule spécialement développée offre un effet velouté lisse sur les ongles,\r\nAprès avoir attendu 1 minute, appliquez le produit sur le vernis coloré.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(33, 'TOPFACE NAIL THERAPY HARDENER COMPLEX', 49.00, 'TOPFACE NAIL THERAPY HARDENER COMPLEX-580633', '/img/TOPFACE NAIL THERAPY HARDENER COMPLEX.jpg', 'La vitamine B5 dans la composition hydrate la surface de l’ongle, le rendant sain, et la vitamine C nourrit et aide à prévenir les ongles cassants,\r\nVous pouvez l’appliquer seul ou sous votre vernis à ongles.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(34, 'TOPFACE SERUM SKINGLOW VEGAN COLLAGEN', 99.00, 'TOPFACE SERUM SKINGLOW VEGAN COLLAGEN-580633', '/img/TOPFACE SERUM SKINGLOW VEGAN COLLAGEN.jpg', 'il a été spécialement développé avec la molécule de collagène véritable d’origine végétale qui a un effet restructurant et revitalisant sur la peau.', 13, 4, NULL, '2022-10-20 15:11:00'),
+(35, 'TOPFACE SERUM SKINGLOW HYALURONIC ACID', 99.00, 'TOPFACE SERUM SKINGLOW HYALURONIC ACID-580633', '/img/TOPFACE SERUM SKINGLOW HYALURONIC ACID.jpg', 'Topface Hyaluronic Acid Serum was developed for you to discover for you to discover the unique plumping power of pure hyaluronic acid.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(41, 'TOPFACE SERUM SKINGLOW VITAMIN C', 99.00, 'TOPFACE SERUM SKINGLOW VITAMIN C-580633', '/img/TOPFACE SERUM SKINGLOW VITAMIN C.jpg', 'Le sérum Topface Vitamine C exploite les incroyables pouvoirs nourrissants de la nature pour apporter les bienfaits des ingrédients actifs directement sur votre peau.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(42, 'Base de teint Hydratante effet Repulpant', 129.00, 'Base de teint Hydratante effet Repulpant-780633', '/img/Base de teint Hydratante effet Repulpant.jpg', 'votre peau est à tendance sèche ou sujette aux tiraillements, vous voulez empêcher votre fond de teint de migrer ou de pelucher en cours de journée.', 12, 4, NULL, '2022-10-20 14:30:34'),
+(43, 'Luxe Lips Ultra Matte Lipstick BYS', 99.00, 'Luxe Lips Ultra Matte Lipstick BYS-780633', '/img/Luxe Lips Ultra Matte Lipstick BYS.jpg', 'The creamy and long-lasting formula does not flake, fade or feather after application. Available in 12 wearable shades that flatters all skin types.', 14, 4, NULL, '2022-10-20 15:24:49');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `reservations`
 --
 
-DROP TABLE IF EXISTS `reservations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reservations` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `product_id` bigint unsigned NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `product_id` bigint UNSIGNED NOT NULL,
   `qte` double NOT NULL,
   `price_total` double NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `client` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adress` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adress` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `reservations`
 --
 
-LOCK TABLES `reservations` WRITE;
-/*!40000 ALTER TABLE `reservations` DISABLE KEYS */;
-INSERT INTO `reservations` VALUES (1,1,3,297,NULL,'mjVvDiLaPu 78YCtRFCvR','0808850001','krOSA6Oarm','2022-10-14 18:24:04','2022-10-14 18:24:04'),(6,1,3,297,NULL,'mjVvDiLaPu 78YCtRFCvR','0808850001','krOSA6Oarm','2022-10-14 18:28:49','2022-10-14 18:28:49'),(7,2,1,56,NULL,'ZFOWMsbwlF PFCw1YNFoB','3796459494','KmoQcBnnh1','2022-10-14 19:41:17','2022-10-14 19:41:17'),(8,4,5,1110,NULL,'VACrcGCson BfcEizbooh','2225098477','GDrlcyivkW','2022-10-14 22:17:25','2022-10-14 22:17:25'),(9,4,5,1110,NULL,'VACrcGCson BfcEizbooh','2225098477','GDrlcyivkW','2022-10-14 22:18:02','2022-10-14 22:18:02'),(13,3,1,129,NULL,'WV6Ffejxay GCkUChSM2a','8172066231','b4Ye0IrDne','2022-10-14 22:22:27','2022-10-14 22:22:27'),(14,1,3,297,NULL,'adnane adnane','1279837129379','adqwkjd;lqwkdlwq','2022-10-16 10:26:36','2022-10-16 10:26:36');
-/*!40000 ALTER TABLE `reservations` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `reservations` (`id`, `product_id`, `qte`, `price_total`, `email`, `client`, `tel`, `adress`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, 297, NULL, 'mjVvDiLaPu 78YCtRFCvR', '0808850001', 'krOSA6Oarm', '2022-10-14 18:24:04', '2022-10-14 18:24:04'),
+(6, 1, 3, 297, NULL, 'mjVvDiLaPu 78YCtRFCvR', '0808850001', 'krOSA6Oarm', '2022-10-14 18:28:49', '2022-10-14 18:28:49'),
+(7, 2, 1, 56, NULL, 'ZFOWMsbwlF PFCw1YNFoB', '3796459494', 'KmoQcBnnh1', '2022-10-14 19:41:17', '2022-10-14 19:41:17'),
+(8, 4, 5, 1110, NULL, 'VACrcGCson BfcEizbooh', '2225098477', 'GDrlcyivkW', '2022-10-14 22:17:25', '2022-10-14 22:17:25'),
+(9, 4, 5, 1110, NULL, 'VACrcGCson BfcEizbooh', '2225098477', 'GDrlcyivkW', '2022-10-14 22:18:02', '2022-10-14 22:18:02'),
+(13, 3, 1, 129, NULL, 'WV6Ffejxay GCkUChSM2a', '8172066231', 'b4Ye0IrDne', '2022-10-14 22:22:27', '2022-10-14 22:22:27'),
+(14, 1, 3, 297, NULL, 'adnane adnane', '1279837129379', 'adqwkjd;lqwkdlwq', '2022-10-16 10:26:36', '2022-10-16 10:26:36'),
+(15, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:16:47', '2022-10-20 15:16:47'),
+(16, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:18:32', '2022-10-20 15:18:32'),
+(17, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:21:27', '2022-10-20 15:21:27'),
+(18, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:22:25', '2022-10-20 15:22:25'),
+(19, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:23:43', '2022-10-20 15:23:43'),
+(20, 2, 1, 69, NULL, 'ben adnae', '89068960', 'tanger', '2022-10-20 15:24:28', '2022-10-20 15:24:28'),
+(21, 43, 1, 99, NULL, 'lo omar', '869076', 'asdfaf', '2022-10-20 15:25:07', '2022-10-20 15:25:07'),
+(22, 4, 1, 79, NULL, 'sefaes faewfeaf', '457u45754', 'sgseg', '2022-10-20 15:30:22', '2022-10-20 15:30:22');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Admin','admin@gmail.com',NULL,'$2y$10$kk5eEAzdaZh.8hA1UgXQTeSWZP4CYBxqEE5ivw.piR.g/mvo6VgJG',NULL,NULL,NULL);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$kk5eEAzdaZh.8hA1UgXQTeSWZP4CYBxqEE5ivw.piR.g/mvo6VgJG', NULL, NULL, NULL);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `reservations`
+--
+ALTER TABLE `reservations`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-10-16 21:42:31
