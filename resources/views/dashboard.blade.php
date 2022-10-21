@@ -30,7 +30,8 @@
                     <tbody>
                     @foreach($reservations as $r)
                         <tr>
-                            <th scope="row"><img src="{{$r->product->img}}" alt="" style="width: 5rem; height: 3rem">
+                            <th scope="row">
+                                <img src="{{$r->product->img? $r->product->img : '' }}" alt="" style="width: 5rem; height: 3rem">
                             </th>
                             <td>{{$r->product->name}}</td>
                             <td>{{$r->product->price}} MAD</td>
