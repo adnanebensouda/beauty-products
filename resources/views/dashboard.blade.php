@@ -31,7 +31,6 @@
                     @foreach($reservations as $r)
                         <tr>
                             <th scope="row">
-                                {{dd($r)}}
                                 <img src="{{$r->product->img}}" alt="" style="width: 5rem; height: 3rem">
                             </th>
                             <td>{{$r->product->name}}</td>
