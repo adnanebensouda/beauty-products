@@ -105,6 +105,7 @@ class ProductsController extends Controller
                     ->with('product:id,img,price,name')
                     ->latest()
                     ->get();
+                dd($reservations);
                 return view('dashboard', compact('reservations'));
             } else {
                 session()->put('user_found', 'Wrong Credentials');
