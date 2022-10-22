@@ -4,12 +4,9 @@
 @include('nav')
 @auth()
     <div class="row">
-        <div class="col-sm-12 mt-5">
-            <ul>
-                <li>
-                    <a href="/mylogin/stats" class="btn btn-info">Products Statistics</a>
-                </li>
-            </ul>
+        <div class="col-sm-12 mt-5 d-flex justify-content-between">
+                <a href="/mylogin/stats" class="btn btn-info">Statistics</a>
+                <a href="/mylogin/stats" class="btn btn-info">Add Products</a>
         </div>
         <div class="col-sm-12">
             <div class="card mt-5">
