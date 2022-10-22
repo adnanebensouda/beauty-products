@@ -5,8 +5,8 @@
 @auth()
     <div class="row">
         <div class="col-sm-12 mt-5 d-flex justify-content-between">
-                <a href="/mylogin/stats" class="btn btn-info">Statistics</a>
-                <a href="/mylogin/stats" class="btn btn-info">Add Products</a>
+                <a href="/mylogin/stats" class="btn btn-info" style="margin-left: 1rem">Statistics</a>
+                <a href="/mylogin/add_product" class="btn btn-info" style="margin-right: 1rem">Add Products</a>
         </div>
         <div class="col-sm-12">
             <div class="card mt-5">
@@ -22,6 +22,7 @@
                         <th scope="col">Tel</th>
                         <th scope="col">Address</th>
                         <th scope="col">Created At</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,6 +39,9 @@
                             <td>{{$r->tel}}</td>
                             <td>{{$r->adress}}</td>
                             <td>{{$r->created_at}}</td>
+                            <td>
+                                <a href="/reservation/delete/{{$r->id}}" class="btn btn-info">Delete</a>
+                            </td>
                         </tr>
                     @endforeach
 

@@ -7,7 +7,7 @@
         <div class="col-sm-12 mt-5">
             <ul>
                 <li>
-                    <a onclick="history.back()" class="btn btn-info">Go back to Reservations</a>
+                    <a href="/mylogin" class="btn btn-info">Go back to Reservations</a>
                 </li>
             </ul>
         </div>
@@ -20,6 +20,7 @@
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
                         <th scope="col">View Count</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,6 +31,9 @@
                             <td>{{$p->name}}</td>
                             <td>{{$p->price}}</td>
                             <td>{{$p->view_count}}</td>
+                            <td>
+                                <a href="/products/delete/{{$p->id}}" class="btn btn-info">Delete</a>
+                            </td>
                         </tr>
                     @endforeach
 

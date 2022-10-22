@@ -1,9 +1,10 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Brancy - Cosmetic & Beauty Salon Website Template</title>
+<title></title>
 <meta name="robots" content="noindex, follow" />
 <meta name="description" content="Brancy - Cosmetic & Beauty Salon Website Template">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="keywords" content="bootstrap, ecommerce, ecommerce html, beauty, cosmetic shop, beauty products, cosmetic, beauty shop, cosmetic store, shop, beauty store, spa, cosmetic, cosmetics, beauty salon" />
 <meta name="author" content="codecarnival" />
 
